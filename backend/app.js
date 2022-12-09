@@ -4,6 +4,7 @@ const multer = require('multer');
 const express = require('express');
 const http = require('http');
 const socketio = require('socket.io');
+const cors1 = require("./cors")
 
 const bodyParser = require ('body-parser');
 const cors = require('cors');
@@ -13,6 +14,7 @@ const server = http.Server(app);
 const io = socketio(server);
 
 app.use(cors());
+app.use(cors1())
 app.use(bodyParser.json());
 app.use(express.static(__dirname));
 
