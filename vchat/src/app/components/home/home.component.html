@@ -1,0 +1,37 @@
+
+
+<div class="wrapper">
+    <div class="logo"> <img src="../../../assets/uploads/telegram-logo-2.png" alt=""> </div>
+    <div class="text-center mt-4 name"> V chat </div>
+    <form class="p-3 mt-3" #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+       
+        <div class="alert alert-primary text-center" *ngIf="errorMsg">
+            {{errorMsg}}
+        </div> <br>
+
+        <div class="form-field d-flex align-items-center form-group">   
+            <input type="text" class="form-control" name="username"  required [(ngModel)]=User.username
+                #username="ngModel" [class.is-invalid]="username.invalid && username.touched"placeholder="Username"> 
+        </div>
+        
+        <div *ngIf="username.errors && (username.invalid || username.touched)">
+            <small class="text-danger" *ngIf="username.errors.required" [class.d-none]="username.valid || username.untouched">Username cannot be empty</small>
+         </div><br>
+
+        <div class="form-field d-flex align-items-center form-group">       
+            <input type="password" class="form-control" name="password" required [(ngModel)]=User.password
+            #password="ngModel" [class.is-invalid]="password.invalid && password.touched" pattern="^[\w\S]{8,16}$" placeholder="Password"> 
+        </div>
+
+        <div *ngIf="password.errors && (password.invalid || password.touched)">
+            <small class="text-danger" *ngIf="password.errors.required" [class.d-none]="password.valid || password.untouched">Password cannot be empty</small>
+            <small class="text-danger" *ngIf="password.errors.pattern" [class.d-none]="password.valid || password.untouched">Password must be minimum 8 characters</small>
+         </div>
+         
+        <button class="btn mt-3" [disabled]="userForm.form.invalid" type="submit">Login</button>
+    
+    </form>
+   
+    <div class="text-center fs-6"><a routerLink="/userRegister">Forgot password?</a> or <a routerLink="/userRegister">Sign up</a> </div>
+   
+</div>

@@ -1,0 +1,52 @@
+
+<div class="wrapper">
+    <div class="logo"> 
+        <img src="../../../assets/uploads/telegram-logo-2.png" alt=""> 
+    </div>
+
+    <div class="text-center mt-4 name"> V chat </div>
+
+    <form class="p-3 mt-3" #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+
+        <div class="alert alert-primary text-center" *ngIf="errorMsg">
+            {{errorMsg}}
+        </div><br>
+
+        <div class="form-field d-flex align-items-center form-group">   <input type="email" class="form-control" name="email" [(ngModel)]=User.email
+            #email="ngModel" placeholder="Email ID" [class.is-invalid]="email.invalid && email.touched" pattern="([A-Za-z0-9\.-]+)@([A-Za-z0-9\-]+)\.([a-z]{2,3})(.[a-z]{2,3})?$"  required=""/> 
+        </div>
+
+        <div *ngIf="email.errors && (email.invalid || email.touched)">
+            <small class="text-danger" *ngIf="email.errors.required" [class.d-none]="email.valid || email.untouched">Email cannot be empty</small>
+            <small class="text-danger" *ngIf="email.errors.pattern" [class.d-none]="email.valid || email.untouched">Invalid email pattern</small>
+         
+        </div>
+
+        <div class="form-field d-flex align-items-center form-group">  <input type="text" placeholder="Username" class="form-control" name="username"  required [(ngModel)]=User.username
+            #username="ngModel" [class.is-invalid]="username.invalid && username.touched"> 
+        </div>
+
+        <div *ngIf="username.errors && (username.invalid || username.touched)">
+            <small class="text-danger" *ngIf="username.errors.required" [class.d-none]="username.valid || username.untouched">Username cannot be empty</small>
+        </div>
+        
+        <div class="form-field d-flex align-items-center form-group">  <input type="password" placeholder="Create Password" class="form-control" name="password" required [(ngModel)]=User.password
+            #password="ngModel" [class.is-invalid]="password.invalid && password.touched" pattern="(?=.*\d)(?=.*\W)(?=.*[a-z])(?=.*[A-Z]).{8,}$"> 
+        </div> 
+
+        <small class="text-info" [class.d-none]="password.valid || password.untouched">Password must contain atleast 1 capital letter,1 small letter,1 digit and 1 special character and require minimum 8 characters </small>
+                  
+        <div *ngIf="password.errors && (password.invalid || password.touched)">
+            <small class="text-danger" *ngIf="password.errors.required" [class.d-none]="password.valid || password.untouched">Password cannot be empty</small>
+            <small class="text-danger" *ngIf="password.errors.pattern" [class.d-none]="password.valid || password.untouched">Password must be minimum 8 characters</small>
+        </div>
+
+
+        <button class="btn mt-3" [disabled]="userForm.form.invalid" type="submit" >Sign Up</button>
+
+    </form>
+
+    <div class="text-center fs-6"> <a routerLink="/">Already have an account? </a>  <a routerLink="/">Login</a> 
+    </div>
+   
+</div>

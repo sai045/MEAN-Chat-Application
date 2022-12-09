@@ -1,0 +1,63 @@
+*{
+
+background-color: #ecf0f3;
+color: rgb(54, 186, 219);
+
+}
+.usertypes{
+    color: black;
+}
+
+
+.chat{
+    margin-top: 10px;
+    width: 100%;
+    overflow: hidden;
+}
+.header{
+    background-color: rgb(54, 186, 219);
+    color: white;
+    padding: 10px;
+}
+
+.username{
+    margin-left:27%;
+}
+.logout{
+    margin-left:80%;
+}
+#users,#chat-space{
+    border: 1px solid black;
+    height: 90vh;
+    
+}
+
+
+.header-contact{
+    background-color: rgb(54, 186, 219);
+    color: white;
+    padding: 5px 2px;
+}
+
+td img{
+    border-radius: 150px;
+    height:5vh;
+}
+
+.contactlist{
+    margin-top:3px;
+    max-height: 90vh !important;
+    overflow-y: scroll !important;
+}
+
+
+.usertypes{
+    border:1px solid black;
+    background-color: white;
+    margin:6px;
+    cursor: pointer;
+}
+
+span .usertypes :hover{
+    background-color: white;
+}

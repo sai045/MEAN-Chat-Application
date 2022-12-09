@@ -1,0 +1,95 @@
+.container{
+    top:5%;
+}
+
+
+#but{
+    color:black
+}
+
+.infoBar{
+    background-color: rgb(54, 186, 219);
+}
+
+.toName{
+    font-size: large;
+    color: whitesmoke;
+}
+span .opt button{
+   padding: 3px;
+   margin:3px;
+  
+}
+
+.infoBar span{
+    margin-right:10px;
+}
+.messages{
+    height: 60vh;
+    
+    background-position: center;
+    overflow-y: scroll !important;
+    color: aliceblue;
+}
+
+.my-message{
+   
+    max-width:35vw;
+    margin-left:40vw;   
+}
+
+.contact-message{
+   
+    max-width:25vw;
+    margin-right:0;
+}
+
+.messageBody{
+    min-height:fit-content;
+    min-width: fit-content;
+    max-width:35vw;
+    background-color: rgb(54, 186, 219);
+}
+img{
+    width:100px;
+    height: 100px;
+}
+
+.userHandle{
+    font-size: small;
+    height: 30px;
+    background-color: rgb(145, 208, 224);
+    color: white;
+}
+
+.my-message .userHandle{
+    background-color: rgb(141, 192, 216);
+    color: white;
+}
+
+.contact-message .userHandle{
+    background-color: white;
+    color:rgb(160, 216, 233);
+}
+
+.my-message .userHandle .menu{
+    margin-left:85%;
+    cursor: pointer;
+    color: white;
+}
+
+
+.contact-message .userHandle .menu{
+    margin-left:50%;
+ 
+    cursor: pointer;
+    color:rgb(114, 170, 184);
+}
+
+.modal1{
+    width:200px;
+}
+.modal-body{
+
+    height:5cm;
+}
