@@ -6,7 +6,7 @@ import { Router} from '@angular/router';
 })
 export class AuthenticationService {
 
-  _url='http://localhost:3000/';
+  _url='https://mean-chat-application-v4i3.vercel.app/';
 
    constructor(private _http: HttpClient,
               private _router:Router) { }

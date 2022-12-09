@@ -17,7 +17,7 @@
           <h5 class="card-header userHandle"><b>You &nbsp;</b> </h5>
           <div class="card-body messageBody">
             <p class="card-text"> {{message.message}}</p>
-            <img src="http://localhost:3000/uploads/{{message.image}}" *ngIf="message.image"> 
+            <img src="https://mean-chat-application-v4i3.vercel.app/uploads/{{message.image}}" *ngIf="message.image"> 
             <span style="font-size: xx-small;color:black;" class="ml-auto d-flex">{{message.date}}</span>
           </div>
         </div><br>
@@ -26,7 +26,7 @@
           <h5 class="card-header userHandle"><b> {{message.from}} &nbsp;</b> <span *ngIf="message.isForwarded"><em>Forwarded</em></span> </h5> 
           <div class="card-body messageBody">
             <p class="card-text"> {{message.message}}</p> 
-            <img src="http://localhost:3000/uploads/{{message.image}}" *ngIf="message.image"> 
+            <img src="https://mean-chat-application-v4i3.vercel.app/uploads/{{message.image}}" *ngIf="message.image"> 
             <span style="font-size: xx-small;color:black;" class="ml-auto d-flex">{{message.date}}</span>
             
           </div>
